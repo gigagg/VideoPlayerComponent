@@ -16,6 +16,7 @@ using Octane.Xamarin.Forms.VideoPlayer.Interfaces;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using GameController;
 
 [assembly: ExportRenderer(typeof(VideoPlayer), typeof(VideoPlayerRenderer))]
 
@@ -183,6 +184,8 @@ namespace Octane.Xamarin.Forms.VideoPlayer.iOS.Renderers
                     },
                     Player = new AVPlayer()
                 };
+
+                _playerControl.BeginAppearanceTransition(true, animated: false);
 
                 SetNativeControl(_playerControl.View);
             }
